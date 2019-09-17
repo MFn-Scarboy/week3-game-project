@@ -2,9 +2,12 @@ class Game {
 
     constructor() {
         this.trampoline = new Trampoline()
-        this.figure = [new Figure()]
+        this.figure = []
         this.score = 0
-        this.addFigure()
+        this.life = 0
+        this.addFigure(this)
+        this.addFigure = this.addFigure.bind(this)
+        this.isItGameOver
         // this.start()
     }
 
@@ -18,11 +21,14 @@ class Game {
     //     }
     // }
 
-    addFigure() {
-        for(let i = 0; i < this.figure.length ;i++)
-        setInterval(() => {
-            this.figure.push(new Figure(i))
-        }, 7000);
+    addFigure(fixThis) {
+        let timer = Math.floor((Math.random() * 4) +1) * 2000;
+        fixThis.figure.push(new Figure())
+        if(!fixThis.isItGameOver) {
+            setTimeout(function() {
+                fixThis.addFigure(game)
+            }, timer);
+        }
     }
 
     // start() {}
@@ -74,22 +80,28 @@ class Figure {
         this.bounce()
 
     }
-
+    
     bounce() {
-        let scoreCount = 0
         let fixThis = this
         this.intervalId = setInterval(function(){
             if(isCollide(game.trampoline.htmlRef, fixThis.htmlRef)) {
                 fixThis.htmlRef.classList.add("bounce1")
-                scoreCount += 1
-                document.getElementById("score").innerHTML = scoreCount    
+                game.score++
+                document.getElementById("score").innerHTML = game.score    
                 if(fixThis.htmlRef.classList.contains("bounce1") && trampoline.offsetLeft === 500) {
                     fixThis.htmlRef.classList.add("bounce2")
-                }else if(fixThis.htmlRef.classList.contains("bounce2") && trampoline.offsetLeft === 750) {
+                } else if(fixThis.htmlRef.classList.contains("bounce2") && trampoline.offsetLeft === 750) {
                     fixThis.htmlRef.classList.add("bounce3")
                 }
             } 
         }, 1000)
+    }
+
+    lifeCheck() {
+        if(figure.offsetTop > 740) {
+            this.life += 1
+            console.log(this.life)
+        }
     }
 }
 
