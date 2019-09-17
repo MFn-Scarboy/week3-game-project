@@ -1,0 +1,187 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.figureClass {
+    height: 75px;
+    /* bottom: 60px; */
+    /* display: none; */
+    /* animation: jump 6s; */
+    position: absolute;
+}
+
+.jump {
+    animation: jump 5s;
+}
+
+.bounce1 {
+    animation: bounce1 7s;
+}
+
+.bounce2 {
+    animation: bounce2 6s;
+}
+
+.bounce3 {
+    animation: bounce3 4s;
+}
+
+#trampoline {
+    width: 250px;
+    height: 75px;
+    position: absolute;
+    bottom: 60px
+}
+
+#building {
+    height: 700px;
+}
+
+#flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: green
+}
+
+#container {
+    width: 1000px;
+    height: 800px;
+    position: relative;
+    background-color: blue
+}
+
+@keyframes jump {
+    0% {
+        left: 170px;
+        top: 450px;
+    }
+    20% {
+        left: 170px;
+        top: 450px;
+    }
+    35% {
+        left: 220px;
+        top: 470px;
+    }
+    50% {
+        left: 260px;
+        top: 520px;
+    }
+    65% {
+        left: 310px;
+        top: 590px;
+    }
+    80% {
+        left: 335px;
+        top: 655px;
+    }
+    100% {
+        left: 360px;
+        top: 750px;
+    }
+}
+
+@keyframes bounce1 {
+    0% {
+        left: 335px;
+        top: 655px;
+    }
+    5% {
+        left: 345px;
+        top: 630px;
+    }
+    20% {
+        left: 385px;
+        top: 510px;
+    }
+    45% {
+        left: 460px;
+        top: 300px;
+    }
+    47% {
+        left: 470px;
+        top: 300px;
+    }
+    70% {
+        left: 555px;
+        top: 520px;
+    }
+    85% {
+        left: 585px;
+        top: 620px;
+    }
+    100% {
+        left: 595px;
+        top: 750px;
+    }
+}
+
+@keyframes bounce2 {
+    0% {
+        left: 585px;
+        top: 620px;
+    }
+    15% {
+        left: 625px;
+        top: 520px;
+    }
+    30% {
+        left: 665px;
+        top: 440px;
+    }
+    45% {
+        left: 700px;
+        top: 350px;
+    }
+    49% {
+        left: 715px;
+        top: 350px;
+    }
+    60% {
+        left: 775px;
+        top: 450px;
+    }
+    75% {
+        left: 800px;
+        top: 530px;
+    }
+    87.5% {
+        left: 835px;
+        top: 630px;
+    }
+    100% {
+        left: 845px;
+        top: 750px;
+    }
+}
+
+@keyframes bounce3 {
+    0% {
+        left: 835px;
+        top: 620px;
+    }
+    25% {
+        left: px;
+        top: px;
+    }
+    50% {
+        left: 910px;
+        top: 500px;
+    }
+    55% {
+        left: 920px;
+        top: 500px;
+    }
+    75% {
+        left: 1050px;
+        top: 625px;
+    }
+    100% {
+        left: 1100px;
+        top: 750px;
+    }
+}
