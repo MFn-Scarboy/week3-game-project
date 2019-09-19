@@ -8,7 +8,7 @@ class Game {
         this.scoreCount(this)
         this.addFigure = this.addFigure.bind(this)
         this.isItGameOver
-        this.life = 5
+        this.life = 1
         this.gameOver()
     }
 

@@ -13,8 +13,8 @@ html, body {
 }
 
 #game-over {
-    left: 50vw;
-    top: 20vh;
+    font-size: 75px;
+    left: 45vw;
     position: absolute;
 }
 
@@ -58,7 +58,7 @@ h1 {
 }
 
 #container {
-    /* min-width: 1500px; */
+    width: 1000px;
     height: 800px;
     position: relative;
     /* background-color: blue */
