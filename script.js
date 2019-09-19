@@ -9,7 +9,7 @@ class Game {
         this.addFigure = this.addFigure.bind(this)
         this.isItGameOver
         this.life = 5
-        // this.start()        
+        this.gameOver()
     }
 
     addFigure(fixThis) {
@@ -21,7 +21,7 @@ class Game {
             }, timer);
         }
     }
-    
+
     scoreCount(fixThis) {  
         setInterval(() => {
             fixThis.figure.forEach((fig)=>{
@@ -33,9 +33,17 @@ class Game {
         }, 1000);   
     }
 
+    gameOver() {
+        setInterval(() => {
+            if(this.life === 0) {
+            this.isItGameOver = true
+            document.getElementById("game-over").innerHTML = "GAME OVER"
+            }
+        }, 1000);
+    }
+
     // start() {}
     //checkCollision() {}
-
 }
 
 class Trampoline {
@@ -81,33 +89,27 @@ class Figure {
         this.splat()
         this.immaHeadOut()
     }
-    
+
     bounce() {
         let fixThis = this
         this.intervalId = setInterval(function(){
             if(isCollide(game.trampoline.htmlRef, fixThis.htmlRef)) {
                 fixThis.htmlRef.classList.add("bounce1")
-                // game.score++
-                // document.getElementById("score").innerHTML = game.score    
                 if(fixThis.htmlRef.classList.contains("bounce1") && trampoline.offsetLeft === 500) {
                     fixThis.htmlRef.classList.add("bounce2")
                 } else if(fixThis.htmlRef.classList.contains("bounce2") && trampoline.offsetLeft === 750) {
                     fixThis.htmlRef.classList.add("bounce3")
                 }
-            } 
+            }
         }, 1000)
     }
-    
+
     splat() {
         let fixThis = this
         setInterval(() => {
             if(fixThis.htmlRef.offsetTop > 740) {
                 game.life--
                 fixThis.htmlRef.remove()
-                if(game.life === 0) {
-                    game.isItGameOver = true
-                    alert("game over") //TEMP!!
-                }
             }
         }, 1000);
     }

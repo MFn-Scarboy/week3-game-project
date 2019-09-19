@@ -5,10 +5,19 @@ html, body {
 
 .figureClass {
     height: 75px;
-    /* bottom: 60px; */
-    /* display: none; */
-    /* animation: jump 6s; */
     position: absolute;
+}
+
+#flex-container {
+    background-image: url("https://www.residentadvisor.net/images/areas/guide-nl-amsterdam-mobile.jpg")
+}
+
+#game-over {
+    text-align: center;
+}
+
+h1 {
+    color: red;
 }
 
 .jump {
@@ -44,14 +53,14 @@ html, body {
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: green
 }
 
 #container {
     width: 1000px;
     height: 800px;
     position: relative;
-    background-color: blue
+    /* background-color: blue */
+    margin-bottom: -120px;
 }
 
 @keyframes jump {
