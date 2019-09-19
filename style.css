@@ -9,11 +9,13 @@ html, body {
 }
 
 #flex-container {
-    background-image: url("https://www.residentadvisor.net/images/areas/guide-nl-amsterdam-mobile.jpg")
+    background-image: url("https://www.residentadvisor.net/images/areas/guide-nl-amsterdam-mobile.jpg");
 }
 
 #game-over {
-    text-align: center;
+    left: 50vw;
+    top: 20vh;
+    position: absolute;
 }
 
 h1 {
@@ -21,15 +23,15 @@ h1 {
 }
 
 .jump {
-    animation: jump 5s;
+    animation: jump 6s;
 }
 
 .bounce1 {
-    animation: bounce1 7.1s;
+    animation: bounce1 7.2s;
 }
 
 .bounce2 {
-    animation: bounce2 6.1s;
+    animation: bounce2 7.8s;
 }
 
 .bounce3 {
@@ -61,6 +63,12 @@ h1 {
     position: relative;
     /* background-color: blue */
     margin-bottom: -120px;
+}
+
+#ambulance {
+    height: 300px;
+    padding-top: 750px;
+    padding-right: 420px;
 }
 
 @keyframes jump {
