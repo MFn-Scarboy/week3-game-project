@@ -58,7 +58,7 @@ h1 {
 }
 
 #container {
-    width: 1000px;
+    /* min-width: 1500px; */
     height: 800px;
     position: relative;
     /* background-color: blue */

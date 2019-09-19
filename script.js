@@ -8,7 +8,7 @@ class Game {
         this.scoreCount(this)
         this.addFigure = this.addFigure.bind(this)
         this.isItGameOver
-        this.life = 1
+        this.life = 5
         this.gameOver()
     }
 
@@ -31,9 +31,9 @@ class Game {
             if(!fixThis.isItGameOver) {
                 fixThis.addFigure(game)
             } else {
-                let figures = document.getElementsByClassName("jump")
-                for(let i = 0; i < figures.length; i++){
-                    figures[i].remove()
+                // let figures = document.getElementsByClassName("jump")
+                for(let i = 0; i < fixThis.figure.length; i++){
+                    fixThis.figure[i].htmlRef.remove()
                     // debugger
                 }
             }
@@ -58,9 +58,9 @@ class Game {
                 // debugger
                 this.isItGameOver = true
                 document.getElementById("game-over").innerHTML = "GAME OVER"
-                let figures = document.getElementsByClassName("jump")
-                for(let i = 0; i < figures.length; i++){
-                    figures[i].remove()
+                // let figures = document.getElementsByClassName("jump")
+                for(let i = 0; i < this.figure.length; i++){
+                    this.figure[i].htmlRef.remove()
                     // debugger
                 }
                 clearInterval(intervalId)
@@ -141,7 +141,7 @@ class Figure {
                 game.life -= 1
                 fixThis.htmlRef.remove()
             }
-        }, 1000);
+        }, 100);
     }
 
     immaHeadOut() {
