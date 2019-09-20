@@ -16,22 +16,25 @@ class Game {
         let timer = Math.floor((Math.random() * 6) +1) * 1500;
         fixThis.figure.push(new Figure())
         if(this.score > 10) {
-            timer *= 0.9
+            timer *= 0.95
         } else if(this.score > 20) {
-            timer *= 0.85
+            timer *= 0.9
         } else if(this.score > 30) {
-            timer *= 0.8
+            timer *= 0.85
         } else if(this.score > 40) {
-            timer *= 0.75
+            timer *= 0.8
         } else if(this.score > 50) {
+            timer *= 0.75
+        } else if(this.score > 60) {
             timer *= 0.7
+        } else if(this.score > 70) {
+            timer *= 0.65
         }
-        
+
         setTimeout(function() {
             if(!fixThis.isItGameOver) {
                 fixThis.addFigure(game)
             } else {
-                // let figures = document.getElementsByClassName("jump")
                 for(let i = 0; i < fixThis.figure.length; i++){
                     fixThis.figure[i].htmlRef.remove()
                 }
@@ -79,6 +82,7 @@ class Game {
             }
     }
 }
+
 
 class Trampoline {
 
@@ -178,6 +182,7 @@ class Figure {
         })
     }
 }
+
 
 function isCollide(element1, element2) {
     var a = {
