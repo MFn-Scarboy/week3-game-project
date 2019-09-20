@@ -10,7 +10,6 @@ class Game {
         this.isItGameOver
         this.life = 5
         this.gameOver()
-        // this.healthBar()
     }
 
     addFigure(fixThis) {
@@ -146,11 +145,17 @@ class Figure {
         let fixThis = this
         setInterval(() => {
             if(fixThis.htmlRef.offsetTop > 740) {
+                fixThis.splatSound()
                 game.life -= 1
                 game.healthBar()
                 fixThis.htmlRef.remove()
             }
         }, 100);
+    }
+
+    splatSound() {
+        let crash = document.getElementById("crunch")
+        crash.play()
     }
 
     immaHeadOut() {
