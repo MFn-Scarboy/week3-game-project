@@ -8,8 +8,32 @@ html, body {
     position: absolute;
 }
 
+#health-bar #goober-list {
+    position: absolute;
+    display: inline-flex;
+    left: 30vw;
+    top: 10vw
+}
+
+#fire {
+    height: 300px;
+    position: absolute;
+    left: 0vw;
+    top: 10vw;
+}
+
+ul {
+    list-style: none
+}
+
+.goobers {
+    height: 50px;
+    margin: 1px;
+    border: red 5px solid
+}
+
 #flex-container {
-    background-image: url("https://www.residentadvisor.net/images/areas/guide-nl-amsterdam-mobile.jpg");
+    background-image: url("images/Fotoram.io.png")
 }
 
 #game-over {
@@ -66,8 +90,8 @@ h1 {
 }
 
 #ambulance {
-    height: 300px;
-    padding-top: 750px;
+    height: 350px;
+    padding-top: 770px;
     padding-right: 420px;
 }
 

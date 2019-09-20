@@ -8,8 +8,9 @@ class Game {
         this.scoreCount(this)
         this.addFigure = this.addFigure.bind(this)
         this.isItGameOver
-        this.life = 1
+        this.life = 5
         this.gameOver()
+        // this.healthBar()
     }
 
     addFigure(fixThis) {
@@ -34,10 +35,8 @@ class Game {
                 // let figures = document.getElementsByClassName("jump")
                 for(let i = 0; i < fixThis.figure.length; i++){
                     fixThis.figure[i].htmlRef.remove()
-                    // debugger
                 }
             }
-            // console.log(timer)
         }, timer);
     }
 
@@ -55,21 +54,31 @@ class Game {
     gameOver() {
         let intervalId = setInterval(() => {
             if(this.life === 0) {
-                // debugger
                 this.isItGameOver = true
                 document.getElementById("game-over").innerHTML = "GAME OVER"
                 // let figures = document.getElementsByClassName("jump")
                 for(let i = 0; i < this.figure.length; i++){
                     this.figure[i].htmlRef.remove()
-                    // debugger
                 }
                 clearInterval(intervalId)
             }
         }, 100);
     }
 
-    // start() {}
-    //checkCollision() {}
+    healthBar() {
+            let goober = document.getElementsByClassName("goober")
+            if(this.life === 4) {
+                goober[4].remove()
+            } else if(this.life === 3) {
+                goober[3].remove()
+            } else if(this.life === 2) {
+                goober[2].remove()
+            } else if(this.life === 1) {
+                goober[1].remove()
+            } else if(this.life === 0) {
+                goober[0].remove()
+            }
+    }
 }
 
 class Trampoline {
@@ -114,7 +123,6 @@ class Figure {
         this.bounce()
         this.splat()
         this.immaHeadOut()
-        // this.beep()
     }
 
     bounce() {
@@ -139,6 +147,7 @@ class Figure {
         setInterval(() => {
             if(fixThis.htmlRef.offsetTop > 740) {
                 game.life -= 1
+                game.healthBar()
                 fixThis.htmlRef.remove()
             }
         }, 100);
