@@ -68,18 +68,18 @@ class Game {
     }
 
     healthBar() {
-            let goober = document.getElementsByClassName("goober")
-            if(this.life === 4) {
-                goober[4].remove()
-            } else if(this.life === 3) {
-                goober[3].remove()
-            } else if(this.life === 2) {
-                goober[2].remove()
-            } else if(this.life === 1) {
-                goober[1].remove()
-            } else if(this.life === 0) {
-                goober[0].remove()
-            }
+        let goober = document.getElementsByClassName("goober")
+        if(this.life === 4) {
+            goober[4].remove()
+        } else if(this.life === 3) {
+            goober[3].remove()
+        } else if(this.life === 2) {
+            goober[2].remove()
+        } else if(this.life === 1) {
+            goober[1].remove()
+        } else if(this.life === 0) {
+            goober[0].remove()
+        }
     }
 }
 
